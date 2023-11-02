@@ -1,0 +1,10 @@
+{% block content %}
+
+<p style="display: flex; justify-content:center;align-items:center;">Are you sure to delte the feedback: {{ feedback.theme }}</p>
+
+<form method='post' style="display: flex; justify-content:center;align-items:center;">
+    <input type=submit value=Yes>
+    <a href="{% url "main" %}">No</a>
+</form>
+
+{% endblock content %}

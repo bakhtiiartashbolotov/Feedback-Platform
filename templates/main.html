@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+        <h1>Feedbacks</h1>
+        <a href="{% url "create_feedback"%}" style="border:1px solid black; padding: 10px; text-decoration: none; font-family: sans-serif;">Create feedback</a>
+        <ul style="margin-top:1.5em">
+            {% for feedback in feedbacks %}
+                <li>
+                    <a href="{% url "feedback_by_id" feedback.id %}">{{feedback}}</a>&nbsp;
+                    <a href="{% url "update_feedback" feedback.id %}">Edit</a>&nbsp;
+                    <a href="{% url "delete_feedback" feedback.id %}">Delete</a>
+                </li><br>
+            {% endfor %}
+        </ul>
+    {% endblock %}
+</body>
+</html>
