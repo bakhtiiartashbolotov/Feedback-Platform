@@ -21,5 +21,4 @@ class Comment(models.Model):
     feedback = models.ForeignKey(Feedback, on_delete=models.CASCADE)
     text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-    id = models.UUIDField(primary_key=True,default=uuid.uuid4, unique=True, editable=False)
 

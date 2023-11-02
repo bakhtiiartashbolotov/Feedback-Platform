@@ -68,10 +68,14 @@ def update_feedback(request:HttpRequest, id:string):
     context = {'form':form,}
     return render(request, "feedback_form.html", context)
 
-@csrf_exempt
 def delete_comment(request, comment_id):
-    comment = get_object_or_404(Comment, id=comment_id)
-    feedback = comment.feedback  # Get the associated feedback
+    comment = Comment.objects.get(id=comment_id)
+
     if request.method == 'POST':
         comment.delete()
-        return redirect('feedback_by_id', id=feedback.id)
+        return redirect('feedback_by_id', id=comment.feedback.id)
+
+    context = {
+        'comment': comment
+    }
+    return render(request, 'delete_comment.html', context)
