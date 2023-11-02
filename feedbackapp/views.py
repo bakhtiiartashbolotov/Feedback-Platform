@@ -11,6 +11,9 @@ def all_feedbacks(request: HttpRequest):
     }
     return render(request, 'main.html', context=context)
 
+def contacts(request):
+    return render(request, 'contacts.html')
+
 def feedback_by_id(request, id):
     feedback = Feedback.objects.get(id=id)
     comments = Comment.objects.filter(feedback=feedback)

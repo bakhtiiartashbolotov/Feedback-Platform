@@ -6,6 +6,15 @@
     <title>Feedback Platform</title>
 </head>
 <body>
+    {% block nav %}
+        <nav>
+            <ul>
+                <li><a href="{% url "main" %}">Home</a></li>
+                <li><a href="{% url "create_feedback"%}">Create Feedback</a></li>
+                <li><a href="{% url "contacts" %}">Contacts</a></li>
+            </ul>
+        </nav>
+    {% endblock nav %}
     {% block content %}
         <h1>Feedbacks</h1>
         <a href="{% url "create_feedback"%}" style="border:1px solid black; padding: 10px; text-decoration: none; font-family: sans-serif;">Create feedback</a>
