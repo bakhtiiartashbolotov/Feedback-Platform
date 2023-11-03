@@ -1,7 +1,9 @@
 # Feedback Platform
 ## Install instruction
 1. Clone repository
-    >git clone https://github.com/bakhtiiartashbolotov/Feedback-Platform.git
+    ```
+    git clone https://github.com/bakhtiiartashbolotov/Feedback-Platform.git
+    ```
 2. Create environment
    ```
    virtualenv .env
